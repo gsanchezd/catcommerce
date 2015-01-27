@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.pedido:hover{
+	border:2px solid orange;
+}

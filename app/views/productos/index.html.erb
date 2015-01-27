@@ -1,6 +1,6 @@
 <div class="well">
 <% @mis_pedidos.each do |pedido| %>
-    <%= image_tag pedido.producto.photo, :size => "56x56" %>
+    <%= image_tag pedido.producto.photo, class:"pedido", size:"56x56"%>
 <% end %>
 </div>
 
