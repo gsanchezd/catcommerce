@@ -5,4 +5,10 @@ class PedidosController < ApplicationController
   	redirect_to productos_path
   end
 
+  def destroy
+  	@pedido = Pedido.find(params[:id])
+  	@pedido.destroy
+  	redirect_to productos_path
+  end
+
 end

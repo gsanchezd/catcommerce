@@ -1,6 +1,6 @@
 <div class="well">
 <% @mis_pedidos.each do |pedido| %>
-    <%= image_tag pedido.producto.photo, class:"pedido", size:"56x56"%>
+    <%= link_to image_tag(pedido.producto.photo, class:"pedido", size:"56x56"), producto_pedido_path(pedido.producto, pedido), method: :delete%>
 <% end %>
 </div>
 
@@ -16,7 +16,7 @@
             <%= link_to 'Destroy', producto, method: :delete, data: { confirm: 'Are you sure?' } %>
 
  -->    
-            <a href="<%= new_producto_pedidos_path(producto) %>" class="btn btn-primary"> pedir </a>
+            <a href="<%= new_producto_pedido_path(producto) %>" class="btn btn-primary"> pedir </a>
             </div>
 
     <% end %>

@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  get 'pedidos/new'
 
   resources :productos do
-    resource :pedidos, only: [:new] 
+    resources :pedidos
   end
 
   root "productos#index"
