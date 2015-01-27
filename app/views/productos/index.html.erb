@@ -1,10 +1,18 @@
-<% @productos.each do |producto| %>
-  <%= producto.name %>
-  <%= image_tag(producto.photo) %>
-  <%= producto.stock %>
-  <%= link_to 'Show', producto %>
-  <%= link_to 'Edit', edit_producto_path(producto) %>
-  <%= link_to 'Destroy', producto, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% @productos.each_slice(@productos.count / 4 ) do |producto_col| %>
+  <div class="col-md-3">
+  <% producto_col.each do |producto| %>
+        <div class="item">
+            <%= producto.name %>
+            <img src="<%= producto.photo %>" class="img-responsive "> 
+            <%= producto.stock %>
+            <%= link_to 'Show', producto %>
+            <%= link_to 'Edit', edit_producto_path(producto) %>
+            <%= link_to 'Destroy', producto, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
     <% end %>
+    </div>
+<% end %>
+
 
 <%= link_to 'New Producto', new_producto_path %>
+</div>
