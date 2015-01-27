@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+30.times.each do |p|
+	Producto.create(name: "producto #{p}", photo:"https://placekitten.com/#{Random.rand(300)+300}x#{Random.rand(300)+300}")
+end
+
