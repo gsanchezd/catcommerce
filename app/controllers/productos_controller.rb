@@ -5,7 +5,15 @@ class ProductosController < ApplicationController
   # GET /productos
   # GET /productos.json
   def index
-    @productos = Producto.all
+    @search = params[:search]
+    if @search
+      @productos = Producto.where("name like ?", "%#{@search}%")
+      @productos = Producto.all if @productos.count == 0
+    else
+      @productos = Producto.all
+   end
+
+
   end
 
   # GET /productos/1
