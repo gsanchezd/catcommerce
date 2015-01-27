@@ -8,6 +8,6 @@
 
 
 30.times.each do |p|
-	Producto.create(name: "producto #{p}", photo:"https://placekitten.com/#{Random.rand(300)+300}x#{Random.rand(300)+300}")
+	Producto.create(name: "producto #{p}", photo:"http://placekitten.com/#{Random.rand(300)+300}/#{Random.rand(300)+300}")
 end
 

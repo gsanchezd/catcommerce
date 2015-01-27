@@ -1,31 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Productos</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Photo</th>
-      <th>Stock</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @productos.each do |producto| %>
-      <tr>
-        <td><%= producto.name %></td>
-        <td><%= producto.photo %></td>
-        <td><%= producto.stock %></td>
-        <td><%= link_to 'Show', producto %></td>
-        <td><%= link_to 'Edit', edit_producto_path(producto) %></td>
-        <td><%= link_to 'Destroy', producto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<% @productos.each do |producto| %>
+  <%= producto.name %>
+  <%= image_tag(producto.photo) %>
+  <%= producto.stock %>
+  <%= link_to 'Show', producto %>
+  <%= link_to 'Edit', edit_producto_path(producto) %>
+  <%= link_to 'Destroy', producto, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
-  </tbody>
-</table>
-
-<br>
 
 <%= link_to 'New Producto', new_producto_path %>
