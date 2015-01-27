@@ -12,7 +12,7 @@ class ProductosController < ApplicationController
     else
       @productos = Producto.all
    end
-
+   @mis_pedidos = current_user.pedidos
 
   end
 
