@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150127134605) do
+ActiveRecord::Schema.define(version: 20150127140409) do
+
+  create_table "pedidos", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "producto_id"
+    t.boolean  "cerrado"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "productos", force: :cascade do |t|
     t.string   "name"
