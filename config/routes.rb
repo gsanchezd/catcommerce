@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :productos
+  get 'pedidos/new'
+
+  resources :productos do
+    resource :pedidos, only: [:new] 
+  end
+
   root "productos#index"
   devise_for :user
   # The priority is based upon order of creation: first created -> highest priority.

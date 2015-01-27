@@ -1,14 +1,19 @@
+
 <% @productos.each_slice(@productos.count / 4 ) do |producto_col| %>
   <div class="col-md-3">
   <% producto_col.each do |producto| %>
-        <div class="item">
+        <div class="item thumbnail">
             <%= producto.name %>
             <img src="<%= producto.photo %>" class="img-responsive "> 
             <%= producto.stock %>
-            <%= link_to 'Show', producto %>
+<!--             <%= link_to 'Show', producto %>
             <%= link_to 'Edit', edit_producto_path(producto) %>
             <%= link_to 'Destroy', producto, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </div>
+
+ -->    
+            <a href="<%= new_producto_pedidos_path(producto) %>" class="btn btn-primary"> pedir </a>
+            </div>
+
     <% end %>
     </div>
 <% end %>
