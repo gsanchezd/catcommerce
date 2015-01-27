@@ -6,3 +6,8 @@ To start:
 	bundle
 	rake db:migrate
 	rake db:seed 
+
+Important tutorials
+	Associations http://guides.rubyonrails.org/association_basics.html
+	Parameters http://guides.rubyonrails.org/action_controller_overview.html#parameters
+	Como implementar un buscador: http://blog.en1mes.com/2014/12/haciendo-un-pequeno-buscador-en-ruby-rails/
