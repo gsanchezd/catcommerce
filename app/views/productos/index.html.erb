@@ -4,7 +4,7 @@
 <% end %>
 </div>
 
-<% @productos.each_slice(@chunks) do |producto_col| %>
+<% @results.each do |k, producto_col| %>
   <div class="col-md-3">
   <% producto_col.each do |producto| %>
         <div class="item thumbnail">
@@ -16,7 +16,7 @@
             <%= link_to 'Destroy', producto, method: :delete, data: { confirm: 'Are you sure?' } %>
 
  -->    
-            <a href="<%= new_producto_pedido_path(producto) %>" class="btn btn-primary"> pedir </a>
+            <a href="<%= new_producto_pedido_path(producto) %>" class="btn btn-primary" data-method=""> pedir </a>
             </div>
 
     <% end %>

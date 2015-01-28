@@ -15,9 +15,7 @@ class ProductosController < ApplicationController
     end
     
     @mis_pedidos = current_user.pedidos.includes(:producto)
-    @chunks = @productos.count >= 4 ? (@productos.count / 4) : @productos.count
-
-
+    @results = @productos.group_by{|i| i.id % 4}
   end
 
   # GET /productos/1

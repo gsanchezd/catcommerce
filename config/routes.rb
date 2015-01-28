@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :productos do
-    resources :pedidos
+    resources :pedidos, only: [:new, :destroy]
   end
 
   root "productos#index"
