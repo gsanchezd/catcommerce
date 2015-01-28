@@ -4,7 +4,7 @@
 <% end %>
 </div>
 
-<% @productos.each_slice(@productos.count / 4 ) do |producto_col| %>
+<% @productos.each_slice(@chunks) do |producto_col| %>
   <div class="col-md-3">
   <% producto_col.each do |producto| %>
         <div class="item thumbnail">
