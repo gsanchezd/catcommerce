@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-30.times.each do |p|
-	Producto.create(name: "Gato #{p}", photo:"http://placekitten.com/#{Random.rand(300)+300}/#{Random.rand(300)+300}")
+30.times do |p|
+	puts "Creando gato #{p}"
+	Producto.create(name: "Gato #{p}", remote_photo_url:"http://placekitten.com/#{Random.rand(300)+300}/#{Random.rand(300)+300}")
 end
 
