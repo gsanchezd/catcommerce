@@ -6,7 +6,6 @@ class ProductosController < ApplicationController
   # GET /productos.json
   def index
     @search = params[:search]
-    puts " >>> #{@search}"
     
     if @search
       @productos = Producto.where("name like ?", "%#{@search}%")
@@ -15,14 +14,12 @@ class ProductosController < ApplicationController
       @productos = Producto.all
     end
     
-    @mis_pedidos = current_user.pedidos
-    if @productos.count >= 4
+    @mis_pedidos = current_user.pedidos.includes(:producto)
+    if @productos.count >= 4 
       @chunks = @productos.count / 4
     else 
       @chunks = @productos.count
     end
-
-    puts " >>> #{@productos.count}"
 
   end
 
