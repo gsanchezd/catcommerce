@@ -15,11 +15,8 @@ class ProductosController < ApplicationController
     end
     
     @mis_pedidos = current_user.pedidos.includes(:producto)
-    if @productos.count >= 4 
-      @chunks = @productos.count / 4
-    else 
-      @chunks = @productos.count
-    end
+    @chunks = @productos.count >= 4 ? (@productos.count / 4) : @productos.count
+
 
   end
 
